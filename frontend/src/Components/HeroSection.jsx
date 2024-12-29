@@ -44,7 +44,7 @@ const HeroSection = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/patients", formData);
+            const response = await axios.post("https://furete-assignment.vercel.app/api/patients", formData);
             setMessage(response.data.message || "Appointment booked successfully!");
             setFormData({ name: "", mobileNo: "", date: "", disease: "" });
         } catch (error) {

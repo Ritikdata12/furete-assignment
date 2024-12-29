@@ -4,12 +4,35 @@ exports.addPatient = async (req, res) => {
     try {
         const { name, mobileNo, date, disease } = req.body;
 
+        const selectedDate = new Date(date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            return res.status(400).json({
+                message: "You cannot select a previous date. Please choose a valid date.",
+            });
+        }
+
+        const existingPatient = await Patient.findOne({ date });
+        if (existingPatient) {
+            return res.status(400).json({
+                message: "This date is unavailable. Please select another date.",
+            });
+        }
+
         const newPatient = new Patient({ name, mobileNo, date, disease });
         await newPatient.save();
 
-        res.status(201).json({ message: "Patient added successfully", patient: newPatient });
+        res.status(201).json({
+            message: "Patient added successfully",
+            patient: newPatient,
+        });
     } catch (error) {
-        res.status(500).json({ message: "Error adding patient", error: error.message });
+        res.status(500).json({
+            message: "Error adding patient",
+            error: error.message,
+        });
     }
 };
 

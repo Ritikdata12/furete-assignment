@@ -43,13 +43,28 @@ const HeroSection = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Date validation logic
+        const today = new Date();
+        const selectedDate = new Date(formData.date);
+
+        if (selectedDate < today.setHours(0, 0, 0, 0)) {
+            setMessage("Cannot select a past date. Please choose a valid date.");
+            return;
+        }
+
         try {
             const response = await axios.post("https://furete-assignment.vercel.app/api/patients", formData);
             setMessage(response.data.message || "Appointment booked successfully!");
             setFormData({ name: "", mobileNo: "", date: "", disease: "" });
         } catch (error) {
             console.error(error);
-            setMessage("Failed to book appointment. Please try again.");
+            // Handle backend validation errors
+            if (error.response && error.response.data && error.response.data.message) {
+                setMessage(error.response.data.message);
+            } else {
+                setMessage("Failed to book appointment. Please try again.");
+            }
         }
     };
 

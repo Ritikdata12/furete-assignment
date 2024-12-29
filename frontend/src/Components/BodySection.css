@@ -1,0 +1,22 @@
+.bd2 {
+    padding: 20px; 
+    display: flex;
+    gap: 20px;
+}
+.bd4:hover {
+    cursor: pointer;
+}
+
+.bd2 > div {
+    flex: 1; 
+}
+
+@media screen and (max-width: 1000px) {
+    .bd2 {
+        flex-direction: column; 
+    }
+
+    .bd2 > div {
+        width: 100%; 
+    }
+}

@@ -1,0 +1,28 @@
+.doc1{
+    background-color: skyblue;
+}
+.doc2{
+    padding: 50px;
+    width: 90%;
+    margin-left: 5%;
+}
+.doc3{
+    width: 100%
+}
+
+
+
+@media screen and (max-width: 1700px){
+    .doc2{
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 830px) and (max-width: 1600px) {
+    .doc4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; 
+    }
+}
+

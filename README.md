@@ -22,9 +22,9 @@ This is a React-based project that recreates the UI as shown in the shared scree
 ## Technologies Used
 
 - **Frontend Framework:** React.js
-- **Styling:** HTML, CSS, (Bootstrap or Tailwind CSS optional)
+- **Styling:**  HTML, CSS, Tailwind CSS
 - **Date Picker Library:** [react-datepicker](https://reactdatepicker.com/)
-- **Mock Backend:** Hardcoded booked dates.
+- **Mock Backend:** booked dates.
 
 ---
 

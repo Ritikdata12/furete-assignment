@@ -44,7 +44,6 @@ const HeroSection = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Date validation logic
         const today = new Date();
         const selectedDate = new Date(formData.date);
 
@@ -59,7 +58,6 @@ const HeroSection = () => {
             setFormData({ name: "", mobileNo: "", date: "", disease: "" });
         } catch (error) {
             console.error(error);
-            // Handle backend validation errors
             if (error.response && error.response.data && error.response.data.message) {
                 setMessage(error.response.data.message);
             } else {
@@ -183,7 +181,9 @@ const HeroSection = () => {
                         className="text-center p-4 hover:bg-gray-50 rounded-lg cursor-pointer"
                     >
                         <div className="text-2xl mb-2">
-                            <img src={treatment.icon} alt={treatment.name} />
+                            <img src={treatment.icon} alt={treatment.name} 
+                            style={{height: "100px", width: "300px"}}
+                            />
                         </div>
                         <div className="text-md font-bold text-black">{treatment.name}</div>
                     </div>

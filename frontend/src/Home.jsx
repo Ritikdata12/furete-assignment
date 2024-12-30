@@ -11,6 +11,8 @@ const Home = () => {
     <HeroSection/>
     <Doctors/>
     <BodySection/>
+
+
     </>
   )
 }

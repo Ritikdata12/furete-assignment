@@ -14,7 +14,7 @@ This is a React-based project that recreates the UI as shown in the shared scree
 ### 2. Appointment Booking System
 - Users can book appointments by selecting a date.
 - Prevents booking of past dates.
-- Disables previously booked dates using a mock backend with hardcoded unavailable dates (e.g., `2024-12-25` and `2024-12-31`).
+- Disables previously booked dates using a mock backend.
 - Displays a message when a date is unavailable: _"This date is unavailable. Please select another date."_
 
 ---

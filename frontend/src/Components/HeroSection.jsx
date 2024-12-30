@@ -169,8 +169,9 @@ const HeroSection = () => {
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 my-8 bg-blue-500 rounded-lg p-4 border border-black">
                 {stats.map((stat) => (
                     <div key={stat.label} className="text-center text-white">
-                        <div className="text-2xl font-bold">{stat.value}</div>
-                        <div className="text-2xl">{stat.label}</div>
+                        <div className=" text-2xl  font-bold">{stat.value}</div>
+                        <div className="text-2xl  hsl">{stat.label}</div>
+
                     </div>
                 ))}
             </div>
